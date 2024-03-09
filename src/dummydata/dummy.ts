@@ -10,7 +10,7 @@ interface BlockProps {
   discount: number;
 }
 
-const generateDummyData = (): BlockProps[] => {
+const generateDummyData = (index: number): BlockProps[] => {
   const images = [
     "/daily/black.svg",
     "/daily/blue.svg",
@@ -26,7 +26,11 @@ const generateDummyData = (): BlockProps[] => {
 
   const getRandomTitle = () => {
     const titles = ["Lorem", "Ipsum", "Dolor", "Sit", "Amet", "Consectetur"];
-    return titles[Math.floor(Math.random() * titles.length)];
+    return titles[Math.floor(Math.random() * titles.length)].toUpperCase();
+  };
+
+  const capitalizeFirstLetter = (word: string) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
   };
 
   const getRandomDescription = () => {
@@ -36,13 +40,22 @@ const generateDummyData = (): BlockProps[] => {
       "Amet consectetur",
       "Adipiscing elit",
     ];
-    return descriptions[Math.floor(Math.random() * descriptions.length)];
+    const randomDescription =
+      descriptions[Math.floor(Math.random() * descriptions.length)];
+
+    return randomDescription
+      .split(" ")
+      .map((word) => capitalizeFirstLetter(word))
+      .join(" ");
   };
 
   const getRandomPrice = (knockoff: number) => {
     const discountPercentage = Math.floor(Math.random() * 41) + 10; // Between 10% and 50%
     const price = knockoff - (knockoff * discountPercentage) / 100;
-    return { price, discount: discountPercentage };
+    return {
+      price: Math.round(price), // Round to remove decimals
+      discount: Math.round(discountPercentage), // Round to remove decimals
+    };
   };
 
   const getRandomKnockoff = () => {
@@ -51,7 +64,7 @@ const generateDummyData = (): BlockProps[] => {
 
   const dummyData: BlockProps[] = [];
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < index; i++) {
     const knockoff = getRandomKnockoff();
     const { price, discount } = getRandomPrice(knockoff);
 

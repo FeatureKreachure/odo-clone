@@ -18,13 +18,13 @@ const Block = ({
   discount,
 }: BlockProps) => {
   return (
-    <div>
+    <div className="mx-3 my-3">
       {/** div1 */}
       <div className="relative overflow-hidden group shadow-md rounded-md shadow-gray-200">
         <img
           src={imageSrc}
           alt="Square Image"
-          className="transition-transform duration-300 ease-in-out rounded-md transform origin-center group-hover:scale-105"
+          className="w-full transition-transform duration-300 ease-in-out rounded-md transform origin-center group-hover:scale-105"
         />
 
         {/* Grey square overlay */}

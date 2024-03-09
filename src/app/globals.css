@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.title {
+    color: black;
+    font-weight: bold;
+}
+
+.description {
+    color: #747E86;
+}
+
+.knockoff {
+    color: #747E86;
+    text-decoration: line-through;
+}
