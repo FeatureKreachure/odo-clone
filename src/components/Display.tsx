@@ -29,7 +29,7 @@ const Display = () => {
   const seven5 = generateDummyData(7);
 
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       <div className="relative block h-[200px] w-full rounded-md">
         <Image
           src={"/headbanner.avif"}
@@ -38,19 +38,20 @@ const Display = () => {
           objectFit="cover"
           className="rounded-md"
         />
+        {/* Image credit: onedayonly.co.za */}
       </div>
       <ShowSix />
-      <Drop dummyData={fakeDrop1.dummyData} color={"bg-red-500"}/>
+      <Drop dummyData={fakeDrop1.dummyData} color={"bg-red-500"} />
       <ShowSeven />
-      <Drop dummyData={fakeDrop2.dummyData} color={"bg-violet-900"}/>
+      <Drop dummyData={fakeDrop2.dummyData} color={"bg-violet-900"} />
       <ShowSeven />
-      <Drop dummyData={fakeDrop3.dummyData} color={"bg-black"}/>
+      <Drop dummyData={fakeDrop3.dummyData} color={"bg-black"} />
       <ShowSeven />
-      <Drop dummyData={fakeDrop4.dummyData} color={"bg-blue-800"}/>
+      <Drop dummyData={fakeDrop4.dummyData} color={"bg-blue-800"} />
       <InverseSeven />
-      <Drop dummyData={fakeDrop5.dummyData} color={"bg-lime-800"}/>
+      <Drop dummyData={fakeDrop5.dummyData} color={"bg-lime-800"} />
       <InverseSeven />
-      <Drop dummyData={fakeDrop6.dummyData} color={"bg-indigo-800"}/>
+      <Drop dummyData={fakeDrop6.dummyData} color={"bg-indigo-800"} />
       <ShowSeven />
       <DisplayThree />
       <DisplayThree />

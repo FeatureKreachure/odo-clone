@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "@mdi/font/css/materialdesignicons.css";
+
+
+.plus-icon::before {
+    content: "\002B"; /* Unicode character for plus sign */
+    font-family: "Material Design Icons";
+    font-size: inherit;
+    line-height: inherit;
+}
+
 .title {
     color: black;
     font-weight: bold;

@@ -1,14 +1,5 @@
-import { v4 as uuidv4 } from "uuid";
-
-interface BlockProps {
-  key: string;
-  imageSrc: string;
-  title: string;
-  description: string;
-  price: number;
-  knockoff: number;
-  discount: number;
-}
+// import { v4 as uuidv4 } from "uuid";
+import { BlockProps } from "@/components/Block";
 
 const generateDummyData = (index: number): BlockProps[] => {
   const images = [
@@ -69,7 +60,6 @@ const generateDummyData = (index: number): BlockProps[] => {
     const { price, discount } = getRandomPrice(knockoff);
 
     dummyData.push({
-      key: uuidv4(),
       imageSrc: getRandomImage(),
       title: getRandomTitle(),
       description: getRandomDescription(),

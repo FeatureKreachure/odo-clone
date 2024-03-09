@@ -1,7 +1,6 @@
 import React from "react";
 
 export interface BlockProps {
-  key: string;
   imageSrc: string;
   title: string;
   description: string;
@@ -11,7 +10,6 @@ export interface BlockProps {
 }
 
 const Block = ({
-  key,
   imageSrc,
   title,
   description,
@@ -30,10 +28,10 @@ const Block = ({
         />
 
         {/* Grey square overlay */}
-        <div className="absolute top-0 right-2 h-8 w-8 bg-gray-500 rounded-b-md group-hover:bg-pink-500 transition-background-color duration-300">
-          <div className="text-white text-xs absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <div>SAVE</div>
-            <div>{discount}%</div>
+        <div className="absolute top-0 right-7 h-14 w-14 bg-gray-500 rounded-b-md group-hover:bg-pink-500 transition-background-color duration-300">
+          <div className="text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+            <div className="text-xs font-bold -mb-2 mt-1">SAVE</div>
+            <div className="text-xl font-bold">{discount}%</div>
           </div>
         </div>
       </div>
@@ -49,7 +47,9 @@ const Block = ({
           <p className="knockoff">R{knockoff}</p>
         </div>
 
-        <button className="">Add</button>
+        <button className="text-black text-2xl bg-[#D4DCE2] rounded-full p-2 w-8 h-8 flex items-center justify-center transition duration-300 hover:text-white hover:bg-[#272727]">
+          <span className="plus-icon"></span>
+        </button>
       </div>
     </div>
   );
