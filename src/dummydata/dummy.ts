@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 interface BlockProps {
-  id: string;
+  key: string;
   imageSrc: string;
   title: string;
   description: string;
@@ -69,7 +69,7 @@ const generateDummyData = (index: number): BlockProps[] => {
     const { price, discount } = getRandomPrice(knockoff);
 
     dummyData.push({
-      id: uuidv4(),
+      key: uuidv4(),
       imageSrc: getRandomImage(),
       title: getRandomTitle(),
       description: getRandomDescription(),

@@ -10,7 +10,7 @@ const DisplayTwo: React.FC = () => {
       {/* Top Row */}
       {dummyData.slice(0, 2).map((data) => (
         <Block
-          key={data.id}
+          key={data.key}
           imageSrc={data.imageSrc}
           title={data.title}
           description={data.description}

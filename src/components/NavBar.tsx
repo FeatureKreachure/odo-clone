@@ -1,45 +1,49 @@
 import Link from "next/link";
 import React from "react";
+import CountdownTimer from "./CountdownTimer";
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="fixed z-20 w-full top-0">
       <div>
         {/* Top Section */}
-        <div className="flex justify-between px-3 bg-[#272727]">
+        <div className="flex items-center justify-between px-5 bg-[#272727] h-9">
           <h1 className="font-bold text-[#272727]">somethingelse</h1>
 
           {/** div1 - Centered Horizontally */}
-          <div className="flex gap-2 text-[#D4DCE2]">
-            <p className="hover:bg-[#0093d0]">TODAY'S DEALS</p>
-            <p className="hover:bg-[#0093d0]">EVERYDAY ESSENTIALS</p>
+          <div className="flex items-center h-9 gap-2 text-[#D4DCE2]">
+            <p className="hover:bg-[#0093d0] px-1 h-full flex items-center flex-grow">
+              TODAY'S DEALS
+            </p>
+            <p className="hover:bg-[#0093d0] px-1 h-full flex items-center flex-grow">
+              EVERYDAY ESSENTIALS
+            </p>
           </div>
 
           {/** div2 - Appears on the Right */}
           <div className="text-white">
-            <Link href={"/register"} className="mr-2">
+            <Link href={"/"} className="mr-2 hover:text-[#D4DCE2]">
               MY ACCOUNT
             </Link>
-            <Link href={"/cart"} className="">
+            <Link href={"/"} className="hover:text-[#D4DCE2]">
               CART
             </Link>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="flex justify-between px-3 text-white text-3xl font-bold bg-[#0093d0]">
+        <div className="flex justify-between px-5 text-white text-5xl font-bold bg-[#0093d0] h-18">
           {/** div1 appears left */}
-          <div>
-            <p className="mb-0.5">one</p>
-            <p className="mb-0.5">
+          <div className="flex flex-col">
+            <h1 className="mb-0 -mt-3">one</h1>
+            <h1 className="-mt-4 mb-1">
               day<span className="text-black">only</span>
-            </p>
+            </h1>
           </div>
 
           {/** div2 appears right */}
-          <div className="mb-1">
-            <p>Deals Expire In:</p>
-            <p>02:04:56</p>
+          <div className="flex items-center mb-1">
+            <CountdownTimer />
           </div>
         </div>
       </div>

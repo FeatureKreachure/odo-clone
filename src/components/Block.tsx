@@ -1,6 +1,7 @@
 import React from "react";
 
-interface BlockProps {
+export interface BlockProps {
+  key: string;
   imageSrc: string;
   title: string;
   description: string;
@@ -10,6 +11,7 @@ interface BlockProps {
 }
 
 const Block = ({
+  key,
   imageSrc,
   title,
   description,

@@ -9,7 +9,7 @@ const DisplayThree: React.FC = () => {
     <div className="grid grid-cols-3 gap-4">
       {dummyData.map((data) => (
         <Block
-          key={data.id}
+          key={data.key}
           imageSrc={data.imageSrc}
           title={data.title}
           description={data.description}

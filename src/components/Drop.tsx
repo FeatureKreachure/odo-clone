@@ -1,12 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import Block from "./Block";
-import generateDummyData from "@/dummydata/dummy";
+import Block, { BlockProps } from "./Block";
 
-const dummyData = generateDummyData(7);
+export interface DropProps {
+  dummyData: BlockProps[];
+  color: string;
+}
 
-const Drop: React.FC = () => {
+const Drop = ({ dummyData, color }: DropProps) => {
   const [showAllBlocks, setShowAllBlocks] = useState(false);
+  console.log(color);
 
   const handleShowMore = () => {
     setShowAllBlocks(true);
@@ -19,7 +22,7 @@ const Drop: React.FC = () => {
   return (
     <div className="rounded-lg bg-[#f2f2f2]">
       {/* Header */}
-      <div className="bg-green-500 p-4 rounded-t-lg">
+      <div className={`p-4 rounded-t-lg ${color}`}>
         <h1 className="text-white text-2xl font-bold">Drop-down Header</h1>
       </div>
 
@@ -33,7 +36,7 @@ const Drop: React.FC = () => {
         <div className="grid grid-cols-4 gap-4 overflow-hidden">
           {dummyData.map((data) => (
             <Block
-              key={data.id}
+              key={data.key}
               imageSrc={data.imageSrc}
               title={data.title}
               description={data.description}
@@ -51,7 +54,7 @@ const Drop: React.FC = () => {
             <div className="flex items-end justify-center h-[100px] relative">
               <div className="bg-gradient-to-b from-transparent via-opacity-100 to-white absolute inset-0"></div>
               <button
-                className="bg-green-500 bottom-5 text-white px-4 py-2 rounded-lg relative z-10"
+                className={`bottom-5 ${color} text-white px-4 py-2 rounded-lg relative z-10`}
                 onClick={handleShowMore}
               >
                 Show More
@@ -63,7 +66,7 @@ const Drop: React.FC = () => {
       {showAllBlocks && (
         <div className="text-center">
           <button
-            className="bg-green-500 text-white px-4 py-2 rounded-lg"
+            className={`text-white px-4 py-2 rounded-lg ${color}`}
             onClick={handleShowLess}
           >
             Show Less
