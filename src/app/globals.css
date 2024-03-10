@@ -4,6 +4,10 @@
 
 @import "@mdi/font/css/materialdesignicons.css";
 
+.spacediv:after {
+    content: '.';
+    visibility: hidden;
+}
 
 .plus-icon::before {
     content: "\002B"; /* Unicode character for plus sign */

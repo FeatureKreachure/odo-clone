@@ -9,7 +9,7 @@ const NavBar = () => {
       <div>
         {/* Top Section */}
         <div className="flex items-center justify-between px-5 bg-[#272727] h-9">
-          <h1 className="font-bold text-[#272727]">somethingelse</h1>
+        <div className="w-[10%]"></div>
 
           {/** div1 - Centered Horizontally */}
           <div className="flex items-center h-9 gap-2 text-[#D4DCE2]">
