@@ -20,14 +20,7 @@ const Display = () => {
   const fakeDrop3 = generateRandomDropProps();
   const fakeDrop2 = generateRandomDropProps();
   const fakeDrop6 = generateRandomDropProps();
-
-  const sixData = generateDummyData(6);
-  const seven = generateDummyData(7);
-  const seven2 = generateDummyData(7);
-  const seven3 = generateDummyData(7);
-  const seven4 = generateDummyData(7);
-  const seven5 = generateDummyData(7);
-
+  
   return (
     <div className="flex flex-col gap-5">
       <div className="relative block h-[200px] w-full rounded-md">
@@ -41,17 +34,17 @@ const Display = () => {
         {/* Image credit: onedayonly.co.za */}
       </div>
       <ShowSix />
-      <Drop dummyData={fakeDrop1.dummyData} color={"bg-red-500"} />
+      <Drop dummyData={fakeDrop1.dummyData} color={"bg-red-500"} heading={fakeDrop1.heading} />
       <ShowSeven />
-      <Drop dummyData={fakeDrop2.dummyData} color={"bg-violet-900"} />
+      <Drop dummyData={fakeDrop2.dummyData} color={"bg-violet-900"} heading={fakeDrop2.heading} />
       <ShowSeven />
-      <Drop dummyData={fakeDrop3.dummyData} color={"bg-black"} />
+      <Drop dummyData={fakeDrop3.dummyData} color={"bg-black"} heading={fakeDrop3.heading} />
       <ShowSeven />
-      <Drop dummyData={fakeDrop4.dummyData} color={"bg-blue-800"} />
+      <Drop dummyData={fakeDrop4.dummyData} color={"bg-blue-800"} heading={fakeDrop4.heading} />
       <InverseSeven />
-      <Drop dummyData={fakeDrop5.dummyData} color={"bg-lime-800"} />
+      <Drop dummyData={fakeDrop5.dummyData} color={"bg-lime-800"} heading={fakeDrop5.heading} />
       <InverseSeven />
-      <Drop dummyData={fakeDrop6.dummyData} color={"bg-indigo-800"} />
+      <Drop dummyData={fakeDrop6.dummyData} color={"bg-indigo-800"} heading={fakeDrop6.heading} />
       <ShowSeven />
       <DisplayThree />
       <DisplayThree />
