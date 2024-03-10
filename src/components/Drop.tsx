@@ -5,11 +5,11 @@ import Block, { BlockProps } from "./Block";
 export interface DropProps {
   dummyData: BlockProps[];
   color: string;
+  heading: string
 }
 
-const Drop = ({ dummyData, color }: DropProps) => {
+const Drop = ({ dummyData, color, heading }: DropProps) => {
   const [showAllBlocks, setShowAllBlocks] = useState(false);
-  console.log(color);
 
   const handleShowMore = () => {
     setShowAllBlocks(true);
@@ -23,7 +23,7 @@ const Drop = ({ dummyData, color }: DropProps) => {
     <div className="rounded-lg bg-[#f2f2f2]">
       {/* Header */}
       <div className={`p-4 rounded-t-lg ${color}`}>
-        <h1 className="text-white text-2xl font-bold">Drop-down Header</h1>
+        <h1 className="text-white text-2xl font-bold">{heading}</h1>
       </div>
 
       {/* Fixed-height container */}

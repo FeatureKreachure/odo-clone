@@ -18,7 +18,7 @@ const Block = ({
   discount,
 }: BlockProps) => {
   return (
-    <div className="mx-3 my-3">
+    <div className="mx-3 my-3 group">
       {/** div1 */}
       <div className="relative overflow-hidden group shadow-md rounded-md shadow-gray-200">
         <img
@@ -41,10 +41,10 @@ const Block = ({
         <p className="description">{description}</p>
       </div>
 
-      <div className="flex justify-between">
+      <div className="flex justify-between items-end">
         <div className="flex gap-2">
-          <p className="price">R{price}</p>
-          <p className="knockoff">R{knockoff}</p>
+          <p className="price group-hover:text-pink-500 text-2xl text-[#444444]">R{price}</p>
+          <p className="knockoff self-end">R{knockoff}</p>
         </div>
 
         <button className="text-black text-2xl bg-[#D4DCE2] rounded-full p-2 w-8 h-8 flex items-center justify-center transition duration-300 hover:text-white hover:bg-[#272727]">
